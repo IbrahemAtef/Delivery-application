@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Inject, Injectable } from "@nestjs/common";
 import { REPOSITORY } from "../../common/constants";
-import { User } from "./user.model";
+import { Users } from "./user.model";
 import { LoginDto, SignUpDto } from "./dto";
 import { generateToken, hashPassword } from "src/common/utils";
 import { ConfigService } from "@nestjs/config";
@@ -10,12 +10,12 @@ import { ConfigService } from "@nestjs/config";
 export class UsersService {
   constructor(
     @Inject(REPOSITORY.USER_REPOSITORY)
-    private readonly userRepository: typeof User,
+    private readonly userRepository: typeof Users,
     private readonly configService: ConfigService
   ) {}
 
-  private async create(user: SignUpDto): Promise<User> {
-    return await this.userRepository.create<User>({ ...user });
+  private async create(user: SignUpDto): Promise<Users> {
+    return await this.userRepository.create<Users>({ ...user });
   }
 
   public async login(user: LoginDto) {
@@ -30,7 +30,7 @@ export class UsersService {
     return { user: result, token };
   }
 
-  private async findOneByEmail(email: string): Promise<User> {
+  private async findOneByEmail(email: string): Promise<Users> {
     return await this.userRepository.findOne({ where: { email } });
   }
 
