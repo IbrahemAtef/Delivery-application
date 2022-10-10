@@ -8,8 +8,8 @@ import {
   Scopes,
   ForeignKey,
 } from "sequelize-typescript";
-import { ROLES } from "../../../common/enums";
-import { Users } from "../../users/user.model";
+import { ROLES } from "../../common/enums";
+import { Users } from "../users/user.model";
 
 @Scopes(() => {
   return {
