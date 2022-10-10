@@ -25,7 +25,7 @@ module.exports = {
         allowNull: false,
       },
       status: {
-        type: Sequelize.ENUM(["IN_PROGRESS"]),
+        type: Sequelize.ENUM(["IN_PROGRESS"]), // need more options
         allowNull: false,
       },
       user_id: {
