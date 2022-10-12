@@ -1,9 +1,11 @@
-import { User } from "./user.model";
-import { REPOSITORY } from "../../common/constants/index";
+import { PROVIDERS } from "src/common/constants";
+import { Users } from "./users.model";
 
-export const usersProviders = [
+export const UserProvider = [
   {
-    provide: REPOSITORY.USER_REPOSITORY,
-    useValue: User,
+    provide: PROVIDERS.USER_PROVIDER,
+    useFactory: () => {
+      return Users;
+    },
   },
 ];

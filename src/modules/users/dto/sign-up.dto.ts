@@ -5,6 +5,7 @@ import {
   IsEnum,
   IsString,
   Matches,
+  IsOptional,
 } from "class-validator";
 import { ROLES } from "src/common/enums";
 import { MessageEnum } from "../../../common/enums";
@@ -27,6 +28,11 @@ export class SignUpDto {
   @IsNotEmpty()
   @IsString()
   firstName: string;
+
+  @IsOptional()
+  @IsNotEmpty()
+  @IsString()
+  middleName?: string;
 
   @IsNotEmpty()
   @IsString()

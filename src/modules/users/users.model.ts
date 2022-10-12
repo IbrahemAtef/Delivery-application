@@ -14,10 +14,10 @@ import {
     basic: {
       attributes: {
         exclude: [
-          "deletedAt",
           "password",
           "createdAt",
           "updatedAt",
+          "deletedAt",
           "createdBy",
           "updatedBy",
         ],
@@ -41,16 +41,19 @@ export class Users extends Model {
   email: string;
 
   @Column(DataType.STRING)
+  userName: string;
+
+  @Column(DataType.STRING)
   password: string;
 
   @Column(DataType.STRING)
   firstName: string;
 
   @Column(DataType.STRING)
-  lastName: string;
+  middleName?: string;
 
   @Column(DataType.STRING)
-  phoneNumber: string;
+  lastName: string;
 
   @Column(DataType.ENUM(...Object.values(ROLES)))
   role: string;

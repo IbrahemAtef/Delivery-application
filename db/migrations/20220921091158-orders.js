@@ -43,6 +43,9 @@ module.exports = {
           key: "id",
         },
       },
+      delivered_at: {
+        type: Sequelize.DATE,
+      },
       created_at: {
         type: Sequelize.DATE,
         defaultValue: Sequelize.fn("now"),
