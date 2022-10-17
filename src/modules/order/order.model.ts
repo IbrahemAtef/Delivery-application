@@ -33,10 +33,10 @@ export class Orders extends Model {
   id: number;
 
   @Column(DataType.DOUBLE)
-  lat: number;
+  latitude: number;
 
   @Column(DataType.DOUBLE)
-  lng: number;
+  longitude: number;
 
   @Column(DataType.STRING)
   order: string;

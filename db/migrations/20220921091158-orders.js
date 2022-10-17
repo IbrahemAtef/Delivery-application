@@ -8,11 +8,11 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
       },
-      lat: {
+      latitude: {
         type: Sequelize.DOUBLE,
         allowNull: false,
       },
-      lng: {
+      longitude: {
         type: Sequelize.DOUBLE,
         allowNull: false,
       },
